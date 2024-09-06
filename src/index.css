@@ -64,22 +64,22 @@ body {
   background-color: rgb(255, 195, 55) !important;
   color: white !important;
 } 
-/* Highlight days with multiple events */
+
 .multiple-events-day {
-  background-color: #08a0ff; /* Yellow background */
-  color: #d32f2f; /* Red text */
+  background-color:  rgb(231, 9, 9);
+  color: #000000; 
   font-weight: bold;
-  font-size: 1.5em; /* Increase font size */
+  font-size: 1.5em; 
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Highlight days with a single event */
+
 .single-event-day {
-  background-color: #c8e6c9; /* Light green background */
-  color: #388e3c; /* Dark green text */
+  background-color: #c8e6c9; 
+  color: #388e3c; 
   font-weight: bold;
   border-radius: 50%;
   display: flex;

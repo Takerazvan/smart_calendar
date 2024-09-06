@@ -4,7 +4,7 @@ import Calendar from 'react-calendar';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'react-bootstrap';
 import 'react-calendar/dist/Calendar.css';
 import "./App.css"
-export default function MyCalendarComponent({ events }) {
+export default function MyCalendarComponent({ events , onDateClick }) {
   const [date, setDate] = useState(new Date());
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedEvents, setSelectedEvents] = useState([]);
@@ -35,7 +35,9 @@ export default function MyCalendarComponent({ events }) {
   return (
     <div>
       <Calendar onClickDay={openModal} tileClassName={tileClassName} />
-      <Modal show={modalIsOpen} onHide={closeModal}>
+      <Modal show={modalIsOpen} onHide={closeModal}  size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered>
         <ModalHeader closeButton>Events</ModalHeader>
         <ModalBody>
           {selectedEvents.length > 0 ? (

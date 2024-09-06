@@ -1,0 +1,51 @@
+{
+    "apps": [
+      {
+        "id": "app1",
+        "name": "MarketFXTrade",
+        "custodian": "John Doe",
+        "owner": "Jane Smith",
+        "compliance": 98,
+        "events": [
+          { "date": "2024-09-10", "title": "Expiring control", "importance": "high" },
+          { "date": "2024-09-10", "title": "iRisk issue Overdue", "importance": "medium" },
+          { "date": "2024-09-12", "title": "TSCM challenge deadline", "importance": "low" },
+          { "date": "2024-09-14", "title": "Expiring BIA", "importance": "high" }
+        ]
+      },
+      {
+        "id": "app2",
+        "name": "TradeAnalyzer",
+        "custodian": "John Doe",
+        "owner": "Bob Brown",
+        "compliance": 90,
+        "events": [
+          { "date": "2024-09-10", "title": "ITSS V3", "importance": "medium" },
+          { "date": "2024-09-20", "title": "IAM 6.1", "importance": "low" }
+        ]
+      },
+      {
+        "id": "app3",
+        "name": "RiskManager",
+        "custodian": "John Doe",
+        "owner": "Dana White",
+        "compliance": 75,
+        "events": [
+          { "date": "2024-09-12", "title": "SMO D1.1b", "importance": "high" },
+          { "date": "2024-09-22", "title": "FOC A2bc", "importance": "medium" }
+        ]
+      },
+      {
+        "id": "app4",
+        "name": "PortfolioTracker",
+        "custodian": "John Doe",
+        "owner": "Frank Green",
+        "compliance": 80,
+        "events": [
+          { "date": "2024-09-08", "title": "iRisk due Date", "importance": "low" },
+          { "date": "2024-09-18", "title": "3 items with deadline to approve", "importance": "high" }
+        ]
+      }
+    ]
+  }
+  
