@@ -101,3 +101,7 @@ body {
 .form-control:hover { 
   filter: drop-shadow(2px 2px 2px rgba(36, 36, 36, 0.5)); 
 } 
+
+.custom-modal-width .modal-dialog {
+  max-width: 120%; 
+}

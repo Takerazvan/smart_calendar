@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './App.css';
 import test from './test.json';
+import file from '../file.json'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header.jsx';
 import 'react-calendar/dist/Calendar.css';
-import MyCalendarComponent from './MyCalendarComponent.jsx';
+import MyCalendarComponent from './MycalendarComponent.jsx';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import Footer from './Footer.jsx';
@@ -21,14 +22,33 @@ const App = () => {
   const handleAppChange = (event) => {
     setSelectedApp(event.target.value);
   };
+  
 
+  const appsall = file.apps1.map(app => app);
+  console.log(appsall)
+  
   const { apps } = test;
-  const selectedAppDetails = apps.find(app => app.id === selectedApp);
-  const combinedEvents = apps.flatMap(app => app.events.map(event => ({ ...event, appName: app.name, date: new Date(event.date) })));
+  const{newApps}= appsall;
 
+
+  
+    const uniquenames = [...new Set (file.apps1
+    .map(app => app["u_cmdb_ci.name"])
+    .filter(name => name && name.trim() !== ""))];
+    console.log('Names for all apps:', uniquenames);
+
+    console.log("APPS JSON:", file)
+
+
+  const selectedAppDetail2 = appsall.find(app => app["u_cmdb_ci.name"] );
+  const selectedAppDetails = apps.find(app => app.id===selectedApp );
+
+  console.log(selectedAppDetails)
+  const combinedEvents = apps.flatMap(app => app.events.map(event => ({ ...event, appName: app.name, date: new Date(event.date) })));
+console.log(selectedAppDetails)
   const openModal = (value) => {
     setDate(value);
-    const dayEvents = selectedAppDetails.events.filter(event => new Date(event.date).toDateString() === value.toDateString());
+    const dayEvents = selectedAppDetails["u_expiration_date"].filter(event => new Date(event.date).toDateString() === value.toDateString());
     setSelectedEvents(dayEvents);
     setModalIsOpen(true);
   };
@@ -57,9 +77,9 @@ const App = () => {
         <div className="row mb-4">
           <div className="col-md-6">
             <Form.Select aria-label="Default select example" className="form-control" onChange={handleAppChange}>
-              {apps.map((app) => (
-                <option key={app.id} value={app.id}>
-                  {app.name} ({app.events.length} events)
+              {uniquenames.map((name, index) => (
+                <option key={index} value={name}>
+                  {name} 
                 </option>
               ))}
             </Form.Select>

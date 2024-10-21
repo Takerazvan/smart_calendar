@@ -35,9 +35,7 @@ export default function MyCalendarComponent({ events , onDateClick }) {
   return (
     <div>
       <Calendar onClickDay={openModal} tileClassName={tileClassName} />
-      <Modal show={modalIsOpen} onHide={closeModal}  size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered>
+      <Modal show={modalIsOpen} onHide={closeModal} >
         <ModalHeader closeButton>Events</ModalHeader>
         <ModalBody>
           {selectedEvents.length > 0 ? (

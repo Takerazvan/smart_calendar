@@ -12,6 +12,7 @@ export default function Footer() {
           </Col>
         </Row>
       </Container>
+      <a href="https://sport.ro%40publi24.ro">click</a>
     </footer>
   );
 };
